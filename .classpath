@@ -32,13 +32,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/eclipse-jee-luna-SR1-win32/eclipse/plugins/javax.annotation_1.2.0.v201401042248.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/eclipse-jee-luna-SR1-win32/eclipse/plugins/javax.inject_1.0.0.v20091030.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/eclipse-jee-luna-SR1-win32/eclipse/plugins/javax.persistence_2.1.0.v201304241213.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/eclipse-jee-luna-SR1-win32/eclipse/plugins/org.jboss.tools.forge2.runtime_2.0.1.Final-v20141016-1910-B69/addon-repository/org-jboss-forge-furnace-container-cdi-2-12-1-Final/cdi-api-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/eclipse-jee-luna-SR1-win32/eclipse/plugins/org.hibernate.eclipse.console_4.0.0.Final-v20141016-1911-B82/org.hibernate.eclipse.console.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/eclipse-jee-luna-SR1-win32/eclipse/plugins/org.jboss.tools.forge2.runtime_2.0.1.Final-v20141016-1910-B69/addon-repository/org-jboss-forge-furnace-container-cdi-2-12-1-Final/weld-se-core-2.2.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/eclipse-jee-luna-SR1-win32/eclipse/plugins/org.jboss.tools.forge.runtime_1.4.144.Final-v20141016-1910-B69/forge-distribution-1.4.4.Final/modules/javax/interceptor/api/main/jboss-interceptors-api_1.1_spec-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/eclipse-jee-luna-SR1-win32/eclipse/plugins/hibernate-core-4.0.0.CR2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

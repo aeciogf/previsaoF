@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "previsao", schema = "public")
+@Table(name = "dados_coletados", schema = "public")
 public class DadosColetados extends PadraoDominio {
 
 	@Id
