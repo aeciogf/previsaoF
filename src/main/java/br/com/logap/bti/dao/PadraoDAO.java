@@ -100,8 +100,8 @@ public class PadraoDAO<T extends PadraoDominio> {
 			FileWriter fw = new FileWriter(arquivo, true);
 		 	PrintWriter pw = new PrintWriter(fw);
 		 	
-		 	int size = lista.size();
-		 	String[] vetor = lista.toArray(new String[size]);
+		 	int tam = lista.size();
+		 	String[] vetor = lista.toArray(new String[tam]);
 		 	
 		 	for(int i = 0; i < lista.size(); i++) {
 		 		pw.print(vetor[i]);
