@@ -25,7 +25,7 @@ public class Teste {
 		
 		DadosColetados registroConsultado = buscarDadosPorId(registro.getId());
 		
-		//removerRegistro(registro);
+		removerRegistro(registro);
 		
 	}
 	
