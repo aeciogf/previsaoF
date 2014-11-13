@@ -69,7 +69,7 @@ public class PadraoDAO<T extends PadraoDominio> {
 		iniciarOperacao();
 		
 		@SuppressWarnings("unchecked")
-		List<T> lista1 = sessao.createQuery("from previsao").list(); 
+		List<T> lista1 = sessao.createQuery("from dados_coletados").list(); 
 		
 		String lista2 = lista1.toString();
 		
