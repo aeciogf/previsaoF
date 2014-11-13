@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.com.logap.bti.dao.Arquivo;
 import br.com.logap.bti.dao.ProcessadorTransacoes;
 import br.com.logap.bti.dominio.DadosColetados;
 
@@ -16,35 +15,18 @@ public class Teste {
 	@Inject
 	private ProcessadorTransacoes processador;
 	
-	@Inject
-	private Arquivo arquivo;
-	
 	public void executarTestes() throws IOException {
 				
 		DadosColetados registro = criarRegistro();
 		
-		String lista = buscarTudo();
-				
 		inserirRegistro(registro);
 		
 		atualizarRegistro(registro);
 		
 		DadosColetados registroConsultado = buscarDadosPorId(registro.getId());
 		
-		removerRegistro(registro);
+		//removerRegistro(registro);
 		
-		criarArquivo();
-		
-		transferirRegistros(lista);
-		
-	}
-	
-	private void criarArquivo() throws IOException{
-		processador.criarArquivo();
-	}
-	
-	private void transferirRegistros(String lista) throws IOException{
-		processador.transferirRegistrosArquivo(lista);
 	}
 	
 	private DadosColetados criarRegistro() {
@@ -71,9 +53,4 @@ public class Teste {
 		return processador.buscarPorId(id);
 	}
 	
-	private String buscarTudo(){
-		return processador.buscarTudo();
-	}
-	
-		
 }

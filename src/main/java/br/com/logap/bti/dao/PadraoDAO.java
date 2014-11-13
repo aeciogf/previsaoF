@@ -64,20 +64,6 @@ public class PadraoDAO<T extends PadraoDominio> {
 		return resultado;
 	}	
 
-	public String buscarTudo(Class<T> classe) throws HibernateException, IndexOutOfBoundsException {
-		
-		iniciarOperacao();
-		
-		@SuppressWarnings("unchecked")
-		List<T> lista1 = sessao.createQuery("from dados_coletados").list(); 
-		
-		String lista2 = lista1.toString();
-		
-		encerrarOperacao();
-		
-		return lista2;
-	}	
-	
 	private void iniciarOperacao() {
 		transacao = sessao.beginTransaction();
 	}

@@ -11,7 +11,4 @@ public class TempoDAO extends PadraoDAO<DadosColetados> {
 		return super.buscarPorIdClasse(id, DadosColetados.class);
 	}
 	
-	public String buscarTudo() throws HibernateException, IndexOutOfBoundsException{
-		return super.buscarTudo(DadosColetados.class);
-	}
 }

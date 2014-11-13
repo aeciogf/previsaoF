@@ -10,11 +10,11 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "dados_coletados", schema = "public")
+@Table(name = "dados", schema = "public")
 public class DadosColetados extends PadraoDominio {
 
 	@Id
-	@SequenceGenerator(name = "sequencia", sequenceName = "dados_coletados_id_seq")
+	@SequenceGenerator(name = "sequencia", sequenceName = "dados_id_seq")
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "sequencia")
 	@Column(name = "id")
 	private int id;

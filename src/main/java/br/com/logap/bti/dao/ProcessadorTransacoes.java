@@ -12,20 +12,9 @@ public class ProcessadorTransacoes {
 	@Inject
 	private TempoDAO tempoDAO;
 
-	@Inject
-	private Arquivo arquivo;
 	
 	public ProcessadorTransacoes() {
 	}
-	
-	public void criarArquivo() throws IOException{
-		arquivo.criar();
-	}
-	
-	public void transferirRegistrosArquivo(String lista) throws IOException{
-		arquivo.transferirRegistros(lista);
-	}
-	
 	
 	public boolean atualizar(DadosColetados dados) throws HibernateException {
 		return tempoDAO.atualizar(dados);
@@ -33,10 +22,6 @@ public class ProcessadorTransacoes {
 	
 	public DadosColetados buscarPorId(long id) throws HibernateException, IndexOutOfBoundsException {
 		return tempoDAO.buscarPorId(id);
-	}
-	
-	public String buscarTudo() throws HibernateException, IndexOutOfBoundsException {
-		return tempoDAO.buscarTudo().toString();
 	}
 	
 	public boolean inserir(DadosColetados dados) throws HibernateException {
