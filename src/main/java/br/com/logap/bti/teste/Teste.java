@@ -23,6 +23,8 @@ public class Teste {
 		
 		atualizarRegistro(registro);
 		
+		criaArquivo();
+		
 		DadosColetados registroConsultado = buscarDadosPorId(registro.getId());
 		
 		removerRegistro(registro);
@@ -53,4 +55,7 @@ public class Teste {
 		return processador.buscarPorId(id);
 	}
 	
+	private void criaArquivo() throws IOException {
+		processador.criaArquivo();
+	}
 }

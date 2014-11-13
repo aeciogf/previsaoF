@@ -31,4 +31,8 @@ public class ProcessadorTransacoes {
 	public boolean remover(DadosColetados dados) throws HibernateException {
 		return tempoDAO.remover(dados);
 	}
+	
+	public void criaArquivo() throws IOException {
+		tempoDAO.criaArquivo();
+	}
 }

@@ -9,6 +9,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.IOException;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+
 import br.com.logap.bti.dominio.PadraoDominio;
 
 public class PadraoDAO<T extends PadraoDominio> {
@@ -63,6 +68,29 @@ public class PadraoDAO<T extends PadraoDominio> {
 		
 		return resultado;
 	}	
+	
+	public void criaArquivo() throws IOException {
+		File arquivo = new File("arquivo.txt");
+		 
+		try {
+		 
+			if (!arquivo.exists()) {
+				arquivo.createNewFile();
+			}
+		 
+		
+			FileWriter fw = new FileWriter(arquivo, true);
+		 
+			BufferedWriter bw = new BufferedWriter(fw);
+		 
+			bw.write("Texto a ser escrito no txt");
+		 	bw.newLine();
+		 	bw.close();
+			fw.close();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	}
 
 	private void iniciarOperacao() {
 		transacao = sessao.beginTransaction();
