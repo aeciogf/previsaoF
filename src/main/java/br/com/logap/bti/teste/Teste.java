@@ -1,6 +1,7 @@
 package br.com.logap.bti.teste;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -23,7 +24,9 @@ public class Teste {
 		
 		atualizarRegistro(registro);
 		
-		criaArquivo();
+		ArrayList<String> lista = buscarTudo();
+		
+		criarArquivo(lista);
 		
 		DadosColetados registroConsultado = buscarDadosPorId(registro.getId());
 		
@@ -55,7 +58,11 @@ public class Teste {
 		return processador.buscarPorId(id);
 	}
 	
-	private void criaArquivo() throws IOException {
-		processador.criaArquivo();
+	private ArrayList<String> buscarTudo() {
+		return processador.buscarTudo();
+	}
+	
+	private void criarArquivo(ArrayList<String> lista) throws IOException {
+		processador.criarArquivo(lista);
 	}
 }

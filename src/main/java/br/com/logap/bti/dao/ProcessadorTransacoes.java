@@ -1,6 +1,7 @@
 package br.com.logap.bti.dao;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -32,7 +33,11 @@ public class ProcessadorTransacoes {
 		return tempoDAO.remover(dados);
 	}
 	
-	public void criaArquivo() throws IOException {
-		tempoDAO.criaArquivo();
+	public ArrayList<String> buscarTudo() {
+		return tempoDAO.buscarTudo();
+	}
+	
+	public void criarArquivo(ArrayList<String> lista) throws IOException {
+		tempoDAO.criarArquivo(lista);
 	}
 }

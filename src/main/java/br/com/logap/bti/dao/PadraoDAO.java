@@ -1,6 +1,6 @@
 package br.com.logap.bti.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -12,7 +12,7 @@ import org.hibernate.Transaction;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.BufferedWriter;
+import java.io.PrintWriter;
 
 import br.com.logap.bti.dominio.PadraoDominio;
 
@@ -69,9 +69,27 @@ public class PadraoDAO<T extends PadraoDominio> {
 		return resultado;
 	}	
 	
-	public void criaArquivo() throws IOException {
+	public ArrayList<String> buscarTudo(Class<T> classe) {
+		iniciarOperacao();
+		
+		StringBuilder textoConsulta = new StringBuilder();
+		textoConsulta.append("SELECT id, temperatura, umidade, choveu FROM ");
+		textoConsulta.append(classe.getSimpleName());
+		
+		Query consulta = (Query) sessao.createQuery(textoConsulta.toString());
+		
+		@SuppressWarnings("unchecked")
+		ArrayList<String> resultado = (ArrayList<String>) consulta.list();
+		
+		encerrarOperacao();
+		
+		return resultado;
+		
+	}
+	
+	public void criarArquivo(ArrayList<String> lista) throws IOException, ArrayStoreException {
+		
 		File arquivo = new File("arquivo.txt");
-		 
 		try {
 		 
 			if (!arquivo.exists()) {
@@ -80,12 +98,16 @@ public class PadraoDAO<T extends PadraoDominio> {
 		 
 		
 			FileWriter fw = new FileWriter(arquivo, true);
-		 
-			BufferedWriter bw = new BufferedWriter(fw);
-		 
-			bw.write("Texto a ser escrito no txt");
-		 	bw.newLine();
-		 	bw.close();
+		 	PrintWriter pw = new PrintWriter(fw);
+		 	
+		 	int size = lista.size();
+		 	String[] vetor = lista.toArray(new String[size]);
+		 	
+		 	for(int i = 0; i < lista.size(); i++) {
+		 		pw.print(vetor[i]);
+ 			}
+		 			
+		 	pw.close();
 			fw.close();
 		} catch (IOException ex) {
 			ex.printStackTrace();
